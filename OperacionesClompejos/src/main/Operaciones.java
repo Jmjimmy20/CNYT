@@ -70,8 +70,8 @@ public class Operaciones {
 			//lanzamos un error de div por 0
 		}else {
 			double aux = ((C2.real * C2.real) + (C2.imag* C2.imag));
-			x = (((C1.real*C2.real)+(C1.imag-C2.imag))/aux);
-			y = (((C1.imag*C2.real)+(C1.real*C2.imag))/aux);
+			x = (((C1.real*C2.real)+(C1.imag*C2.imag))/aux);
+			y = (((C1.imag*C2.real)-(C1.real*C2.imag))/aux);
 		}
 		return new Complejo(x,y);
 	}
@@ -79,12 +79,41 @@ public class Operaciones {
 	/***
 	 * Pasar de numero complejo a polar
 	 * @param C1
-	 * @return valor en polar
+	 * @return polar
 	 */
-	public double complejo_Polar(Complejo C1) {
-		double angulo=Math.atan2(C1.imag, C1.real);    
-	    if(angulo<0)  angulo=2*Math.PI+angulo;
-	    return angulo*180/Math.PI;
+	public Complejo complejo_Polar(Complejo C1) {
+		double valTeta = Math.atan(C1.imag/C1.real);
+		double valorPfea = Math.sqrt(Math.pow(C1.real, 2) + Math.pow(C1.imag, 2));
+		return new Complejo(valorPfea, valTeta);
+	}
+	
+	/***
+	 * Pasar de polar a complejo o cartesiano
+	 * @param C1
+	 * @return complejo
+	 */
+	public Complejo Polar_complejo(Complejo C1) {
+		double A = (C1.real*(Math.cos(C1.imag)));
+		double B = (C1.real*(Math.sin(C1.imag)));
+		System.out.println(A);
+        System.out.println(B);
+
+		return new Complejo((C1.real*(Math.cos(C1.imag))),(C1.real*(Math.sin(C1.imag))));
+	}
+	
+	
+	/***
+	 * Verifica si 2 numeros complejos son iguales
+	 * @param C1
+	 * @param C2
+	 * @return true o false si es o no igual 
+	 */
+	public boolean igualdadComplejos(Complejo C1, Complejo C2) {
+		
+		if(C1.real == C2.real && C1.imag == C2.imag) 
+			return true;
+		else
+			return false;
 	}
 	
 

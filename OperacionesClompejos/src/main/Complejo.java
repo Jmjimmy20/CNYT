@@ -10,5 +10,11 @@ public class Complejo {
       this.real = re;
       this.imag = im;
     }
+    
+    public Complejo Conjugado(){
+        double imaginarioN = imag * (-1);
+        Complejo NumeroCNuevo = new Complejo(real, imaginarioN);
+        return NumeroCNuevo;
+    }
 	   
 }

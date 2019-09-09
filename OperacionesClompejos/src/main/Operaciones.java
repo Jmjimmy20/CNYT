@@ -28,7 +28,7 @@ public class Operaciones {
 	 * @param C2
 	 * @return C1+C2
 	 */
-	public Complejo Sum(Complejo C1, Complejo C2) {
+	public static Complejo Sum(Complejo C1, Complejo C2) {
 		
 		return new Complejo (C1.real + C2.real , C1.imag + C2.imag);
 	}
@@ -52,7 +52,7 @@ public class Operaciones {
 	 * @param C2
 	 * @return C1*C2
 	 */
-	public Complejo Mult(Complejo C1, Complejo C2) {
+	public static Complejo Mult(Complejo C1, Complejo C2) {
 		
 		return new Complejo (((C1.real*C2.real) - (C1.imag * C2.imag)) , ((C1.real * C2.imag)+(C1.imag *C2.real)));
 	}
@@ -108,7 +108,7 @@ public class Operaciones {
 	 * @param C2
 	 * @return true o false si es o no igual 
 	 */
-	public boolean igualdadComplejos(Complejo C1, Complejo C2) {
+	public static boolean igualdadComplejos(Complejo C1, Complejo C2) {
 		
 		if(C1.real == C2.real && C1.imag == C2.imag) 
 			return true;

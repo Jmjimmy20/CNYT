@@ -40,5 +40,20 @@ public class ComplexVector {
         return listaN;
     }
 	
+	public ComplexVector Conjugado(){
+        ComplexVector retorno = new ComplexVector(size);
+        for (Complejo c : ListVector){
+            retorno.AddValue(c.Conjugado());
+                      
+        }
+        return retorno;
+    }
+	
+	public void Print(){
+        for(int i = 0; i < size; i++){
+            System.out.println(this.GetPosition(i).real + " " +this.GetPosition(i).imag);
+        }
+            System.out.println("");
+    }
 	
 }

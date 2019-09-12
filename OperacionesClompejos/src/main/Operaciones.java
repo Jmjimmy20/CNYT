@@ -82,7 +82,7 @@ public class Operaciones {
 	 * @return polar
 	 */
 	public Complejo complejo_Polar(Complejo C1) {
-		double valTeta = Math.atan(C1.imag/C1.real);
+		double valTeta = Math.atan2(C1.imag,C1.real);
 		double valorPfea = Math.sqrt(Math.pow(C1.real, 2) + Math.pow(C1.imag, 2));
 		return new Complejo(valorPfea, valTeta);
 	}
